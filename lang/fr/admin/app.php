@@ -1,0 +1,131 @@
+<?php
+
+return [
+    'auth_page' => [
+        'signin' => 'Connexion',
+        'forgot_password' => 'Mot de passe oublié?',
+        'email' => 'Email',
+        'password' => 'Mot de passe',
+        'password_confirmation' => 'Confirmer Mot de passe',
+       'remember_me' => 'Rester connecté',
+       'invalid_credentials' => 'Informations invalides',
+       'login_successful' => 'Connexion réussie',
+       'logout_successful' => 'Déconnexion réussie',
+       'already_registered' => 'Déjà un compte? ',
+       'send_link' => 'Envoyer le lien',
+       'forgot_password_text' => 'Entrer votre adresse email, un lien de réinitialisation vous sera envoyé!',
+       'forgot_password_mail' => 'Mail d\'oubli de mot de passe',
+        'forgot_password_mail_sent' => 'Lien envoyé avec succès. Vérifiez votre boîte email!',
+       'reset_password' => 'Réinitialiser mot de passe',
+       'new_password' => 'Nouveau mot de passe',
+       'new_password_pattern' => 'Utilisez 8 caractères ou plus avec un mélange de lettres, de chiffres et de symboles.',
+       'enter_new_password' => 'Entrer votre nouveau mot de passe',
+
+    ],
+    'general' => [
+        'slogan_title' => 'Révélez le potentiel de vos collaborateurs.',
+        'slogan_text' => 'La formation continue, simplifiée et accessible pour vos collaborateurs. Transformez les compétences de vos équipes en moteur de croissance pour votre entreprise.',
+        'about' => 'A propose',
+        'contact' => 'Nous contacter',
+        'help' => 'Aide',
+        'terms-of-service' => 'Termes de service',
+        'privacy-policy' => 'Politique de confidentialité',
+        'loading' => 'Chargement',
+        'edit' => 'Modifier',
+        'create' => 'Créer',
+        'delete' => 'Supprimer',
+        'see' => 'Afficher',
+        'close' => 'Fermer',
+        'cancel' => 'Annuler',
+        'search' => 'Rechercher',
+        'no_data_found' => 'Aucune donnée ',
+        'select_options' => 'Sélectionner une option',
+        'Hello' => 'Bonjour!',
+        'created_successfully' => 'Ressource créée avec succès',
+        'updated_successfully' => 'Ressource modifiée avec succès',
+        'deleted_successfully' => 'Ressource supprimée avec succès',
+
+
+        'courses_table' => [
+            'title' => 'Titre',
+            'category' => 'Catégorie',
+            'description' => 'Description',
+            'date' => 'Date de création',
+        ],
+        'categories_table' => [
+            'name' => 'Nom',
+            'description' => 'Description',
+            'date' => 'Date de création',
+        ],
+
+    ],
+    'menu' => [
+        'dashboard' => 'Tableau de bord',
+        'course' => 'Cours',
+        'course_create' => 'Créer un cours',
+        'course_edit' => 'Modifier un cours',
+        'course_list' => 'Liste des cours',
+        'user_management' => 'Gestion Utilisateur',
+        'user' => 'Utilisateurs',
+        'user_create' => 'Créer un utilisateur',
+        'user_edit' => 'Modifier l\'utilisateur',
+        'user_list' => 'Liste des utilisateurs',
+        'category' => 'Catégorie',
+        'category_create' => 'Créer une catégorie',
+        'category_edit' => 'Modifier la catégorie',
+        'category_list' => 'Liste des catégories',
+        'company' => 'Entreprise',
+        'company_create' => 'Créer une entreprise',
+        'company_edit' => 'Modifier l\'entreprise',
+        'company_list' => 'Liste des entreprises',
+        'role' => 'Rôles',
+        'role_create' => 'Créer un rôle',
+        'role_edit' => 'Modifier le rôle',
+        'role_list' => 'Liste des rôles',
+        'permission' => 'Permissions',
+        'permission_create' => 'Créer une permission',
+        'permission_edit' => 'Modifier la permission',
+        'permission_list' => 'Liste des permissions',
+        'question' => 'Question',
+        'question_create' => 'Créer une question',
+        'quiz' => 'Quiz',
+        'quiz_create' => 'Créer un quiz',
+        'quiz_edit' => 'Editer Quiz',
+        'quiz_list' => 'Liste des quiz',
+       'result' => 'Result',
+    ],
+    'forgot_mail_content' => "
+        Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation du mot de passe de votre compte. <br><br>
+
+        Réinitialiser le mot de passe <br><br>
+        Ce lien de réinitialisation du mot de passe expirera dans 60 minutes.<br><br>
+
+        Si vous n'avez pas demandé la réinitialisation de votre mot de passe, aucune autre action n'est requise.
+    ",
+
+    'app_header' => [
+        'my_profile' => 'Mon Profile',
+        'mode' => 'Mode',
+        'language' => 'Langue',
+        'signout' => 'Déconnexion',
+        'user_profile' => 'Profile Utilisateur',
+        'edit_profile' => 'Profile Utilisateur',
+       'settings' => 'Paramètres',
+       'light' => 'Clair',
+       'dark' => 'Sombre',
+       'system' => 'Système',
+    ],
+
+    'datatable' => [
+        'info' => 'Affiche page _PAGE_ sur _PAGES_',
+        'infoEmpty' => 'Aucune donnée disponible',
+        'infoFiltered' => '(filtrage sur _MAX_ total records)',
+        'lengthMenu' => 'Montrer _MENU_ données par page',
+        'zeroRecords' => 'Aucune donnée - désolé',
+
+        'showing' => 'Affichage de',
+        'of' => 'sur',
+        'to' => 'à',
+        'results' => 'résultats',
+    ],
+];
