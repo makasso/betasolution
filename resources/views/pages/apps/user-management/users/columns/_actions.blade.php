@@ -7,7 +7,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-3">
         <a href="{{ route('user-management.users.show', $user) }}" class="menu-link px-3">
-            View
+            {{ __('admin/app.general.see') }}
         </a>
     </div>
     <!--end::Menu item-->
@@ -15,7 +15,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-3">
         <a href="#" class="menu-link px-3" data-kt-user-id="{{ $user->id }}" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user" data-kt-action="update_row">
-            Edit
+            {{ __('admin/app.general.edit') }}
         </a>
     </div>
     <!--end::Menu item-->
@@ -23,7 +23,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-3">
         <a href="#" class="menu-link px-3" data-kt-user-id="{{ $user->id }}" data-kt-action="delete_row">
-            Delete
+            {{ __('admin/app.general.delete') }}
         </a>
     </div>
     <!--end::Menu item-->

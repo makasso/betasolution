@@ -71,14 +71,14 @@ class UsersDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('user')->addClass('d-flex align-items-center')->name('name'),
-            Column::make('role')->searchable(false),
-            Column::make('last_login_at')->title('Last Login'),
-            Column::make('created_at')->title('Joined Date')->addClass('text-nowrap'),
+            Column::make('user')->addClass('d-flex align-items-center')->title(trans('admin/app.menu.user'))->name('name')->exportable(true)->printable(true),
+            Column::make('role')->searchable(false)->exportable(true)->printable(true),
+            Column::make('last_login_at')->title(trans('admin/app.general.users_table.last_login'))->exportable(true)->printable(true),
+            Column::make('created_at')->title(trans('admin/app.general.users_table.joined_date'))->addClass('text-nowrap')->exportable(true)->printable(true),
             Column::computed('action')
                 ->addClass('text-end text-nowrap')
-                ->exportable(true)
-                ->printable(true)
+                ->exportable(false)
+                ->printable(false)
                 ->width(60)
         ];
     }

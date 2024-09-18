@@ -20,7 +20,7 @@ use App\Http\Controllers\Apps\PermissionManagementController;
 |
 */
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', [DashboardController::class, 'index']);
 
@@ -30,6 +30,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
         Route::resource('/user-management/users', UserManagementController::class);
         Route::resource('/user-management/roles', RoleManagementController::class);
         Route::resource('/user-management/permissions', PermissionManagementController::class);
+    });
+
+    Route::name('course-management.')->group(function () {
+        Route::resource('/course-management/courses', \App\Http\Controllers\CourseManagementController::class);
+        Route::resource('/course-management/modules', \App\Http\Controllers\ModuleManagementController::class);
+        Route::resource('/course-management/lessons', \App\Http\Controllers\LessonManagementController::class);
+        Route::resource('/course-management/quizzes', \App\Http\Controllers\QuizManagementController::class);
+        Route::resource('/course-management/assignments', \App\Http\Controllers\AssignmentManagementController::class);
+        Route::resource('/course-management/resources', \App\Http\Controllers\ResourceManagementController::class);
     });
 
 

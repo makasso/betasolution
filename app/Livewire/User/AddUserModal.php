@@ -24,13 +24,11 @@ class AddUserModal extends Component
 
     public $edit_mode = false;
 
-    protected $proxies = '*';
-
     protected $rules = [
         'name' => 'required|string',
         'email' => 'required|email',
         'role' => 'required|string',
-        'avatar' => 'required|sometimes|image|max:1024',
+        'avatar' => 'nullable|sometimes|image|max:1024',
     ];
 
     protected $listeners = [
@@ -62,8 +60,6 @@ class AddUserModal extends Component
     {
         // Validate the form input data
         $this->validate();
-
-        dd($this->avatar);
 
         DB::transaction(function () {
             // Prepare the data for creating a new user

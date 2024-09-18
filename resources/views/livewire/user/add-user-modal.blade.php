@@ -18,7 +18,7 @@
             <!--begin::Modal body-->
             <div class="modal-body px-5 my-7">
                 <!--begin::Form-->
-                <form id="kt_modal_add_user_form" class="form" action="#" wire:submit="submit"
+                <form id="kt_modal_add_user_form" class="form" action="#" wire:submit.prevent="submit"
                     enctype="multipart/form-data">
                     <input type="hidden" wire:model="user_id" name="user_id" value="{{ $user_id }}" />
                     <!--begin::Scroll-->
@@ -27,7 +27,7 @@
                         data-kt-scroll-dependencies="#kt_modal_add_user_header"
                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                         <!--begin::Input group-->
-                        <div class="fv-row mb-7">
+                        {{-- <div class="fv-row mb-7">
                             <!--begin::Label-->
                             <label class="d-block fw-semibold fs-6 mb-5">Avatar</label>
                             <!--end::Label-->
@@ -89,12 +89,12 @@
                             @error('avatar')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                        </div>
+                        </div> --}}
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">Full Name</label>
+                            <label class="required fw-semibold fs-6 mb-2">{{ __('admin/app.general.categories_table.name') }}</label>
                             <!--end::Label-->
                             <!--begin::Input-->
                             <input type="text" wire:model="name" name="name"
@@ -166,11 +166,11 @@
                     <!--begin::Actions-->
                     <div class="text-center pt-15">
                         <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" aria-label="Close"
-                            wire:loading.attr="disabled">Discard</button>
+                            wire:loading.attr="disabled">{{ __('admin/app.general.cancel') }}</button>
                         <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                            <span class="indicator-label" wire:loading.remove>Submit</span>
+                            <span class="indicator-label" wire:loading.remove>{{ __('admin/app.general.create') }}</span>
                             <span class="indicator-progress" wire:loading wire:target="submit">
-                                Please wait...
+                                {{ __('admin/app.general.loading') }}...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                             </span>
                         </button>

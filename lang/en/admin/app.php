@@ -56,6 +56,12 @@ return [
             'description' => 'Description',
             'date' => 'Creation Date',
         ],
+        'users_table' => [
+            'name' => 'Full Name',
+            'role' => 'Role',
+            'joined_date' => 'Joined Date',
+            'last_login' => 'Last login',   
+        ],
     ],
 
     'menu' => [

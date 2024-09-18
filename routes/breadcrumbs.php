@@ -12,20 +12,20 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
 
 // Home > Dashboard
 Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
-    $trail->parent('home');
-    $trail->push('Dashboard', route('dashboard'));
+//    $trail->parent('home');
+    $trail->push(trans('admin/app.menu.dashboard'), route('dashboard'));
 });
 
 // Home > Dashboard > User Management
 Breadcrumbs::for('user-management.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('dashboard');
-    $trail->push('User Management', route('user-management.users.index'));
+//    $trail->parent('dashboard');
+    $trail->push(trans('admin/app.menu.user_management'), route('user-management.users.index'));
 });
 
 // Home > Dashboard > User Management > Users
 Breadcrumbs::for('user-management.users.index', function (BreadcrumbTrail $trail) {
     $trail->parent('user-management.index');
-    $trail->push('Users', route('user-management.users.index'));
+    $trail->push(trans('admin/app.menu.user'), route('user-management.users.index'));
 });
 
 // Home > Dashboard > User Management > Users > [User]
@@ -37,7 +37,7 @@ Breadcrumbs::for('user-management.users.show', function (BreadcrumbTrail $trail,
 // Home > Dashboard > User Management > Roles
 Breadcrumbs::for('user-management.roles.index', function (BreadcrumbTrail $trail) {
     $trail->parent('user-management.index');
-    $trail->push('Roles', route('user-management.roles.index'));
+    $trail->push(trans('admin/app.menu.role'), route('user-management.roles.index'));
 });
 
 // Home > Dashboard > User Management > Roles > [Role]
@@ -49,5 +49,5 @@ Breadcrumbs::for('user-management.roles.show', function (BreadcrumbTrail $trail,
 // Home > Dashboard > User Management > Permission
 Breadcrumbs::for('user-management.permissions.index', function (BreadcrumbTrail $trail) {
     $trail->parent('user-management.index');
-    $trail->push('Permissions', route('user-management.permissions.index'));
+    $trail->push(trans('admin/app.menu.permission'), route('user-management.permissions.index'));
 });

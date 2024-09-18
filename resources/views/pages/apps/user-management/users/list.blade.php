@@ -1,7 +1,7 @@
 <x-default-layout>
 
     @section('title')
-        Users
+        {{ __('admin/app.menu.user') }}
     @endsection
 
     @section('breadcrumbs')
@@ -29,7 +29,7 @@
                     <!--begin::Add user-->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                         {!! getIcon('plus', 'fs-2', '', 'i') !!}
-                        Add User
+                        {{ __('admin/app.menu.user_create') }}
                     </button>
                     <!--end::Add user-->
                 </div>
