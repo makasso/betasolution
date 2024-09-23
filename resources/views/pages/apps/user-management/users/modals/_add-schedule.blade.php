@@ -11,7 +11,7 @@
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                    <i class="ki-duotone ki-cross fs-1">
+                    <i class="ki-solid ki-cross fs-1">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </i>
@@ -39,7 +39,7 @@
                         <label class="fs-6 fw-semibold form-label mb-2">
                             <span class="required">Date & Time</span>
                             <span class="ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="Select a date & time.">
-                                <i class="ki-duotone ki-information fs-7">
+                                <i class="ki-solid ki-information fs-7">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                     <span class="path3"></span>

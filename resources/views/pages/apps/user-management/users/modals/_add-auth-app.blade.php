@@ -11,7 +11,7 @@
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                    <i class="ki-duotone ki-cross fs-1">
+                    <i class="ki-solid ki-cross fs-1">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </i>

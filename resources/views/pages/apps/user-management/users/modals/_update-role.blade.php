@@ -11,7 +11,7 @@
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                    <i class="ki-duotone ki-cross fs-1">
+                    <i class="ki-solid ki-cross fs-1">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </i>
@@ -27,7 +27,7 @@
                     <!--begin::Notice-->
                     <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
                         <!--begin::Icon-->
-                        <i class="ki-duotone ki-information fs-2tx text-primary me-4">
+                        <i class="ki-solid ki-information fs-2tx text-primary me-4">
                             <span class="path1"></span>
                             <span class="path2"></span>
                             <span class="path3"></span>

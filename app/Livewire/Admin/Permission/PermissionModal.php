@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Permission;
+namespace App\Livewire\Admin\Permission;
 
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
@@ -23,7 +23,7 @@ class PermissionModal extends Component
 
     public function render()
     {
-        return view('livewire.permission.permission-modal');
+        return view('livewire.admin.permission.permission-modal');
     }
 
     public function mountPermission($permission_name = '')

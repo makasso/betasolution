@@ -69,5 +69,10 @@ class RolesPermissionsSeeder extends Seeder
 
         User::find(1)->assignRole('super admin');
         User::find(2)->assignRole('company admin');
+
+        $users = User::query()->whereNotIn('id', [1, 2])->get();
+        foreach ($users as $user) {
+            $user->assignRole(array_rand(['editor', 'supervisor', 'company_admin', 'employee']));
+        }
     }
 }

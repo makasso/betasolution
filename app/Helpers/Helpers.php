@@ -426,7 +426,7 @@ if (!function_exists('getIcon')) {
      *
      * @return string
      */
-    function getIcon($name, $class = '', $type = '', $tag = 'span')
+    function getIcon($name, $class = '', $type = 'solid', $tag = 'span')
     {
         return theme()->getIcon($name, $class, $type, $tag);
     }

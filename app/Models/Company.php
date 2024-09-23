@@ -13,6 +13,8 @@ class Company extends Model
         'name',
         'industry',
         'address',
+        'country',
+        'city',
         'phone',
         'email',
         'validity_date',

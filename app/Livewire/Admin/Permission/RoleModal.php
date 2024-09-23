@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Permission;
+namespace App\Livewire\Admin\Permission;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
@@ -70,7 +70,7 @@ class RoleModal extends Component
         }
 
         // Return the view with the permissions_by_group variable passed in.
-        return view('livewire.permission.role-modal', compact('permissions_by_group'));
+        return view('livewire.admin.permission.role-modal', compact('permissions_by_group'));
     }
 
     // This function submits the form and updates the role's permissions.

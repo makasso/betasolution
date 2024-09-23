@@ -10,7 +10,7 @@
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                    <i class="ki-duotone ki-cross fs-1">
+                    <i class="ki-solid ki-cross fs-1">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </i>
@@ -31,7 +31,7 @@
                         <label class="fs-6 fw-semibold form-label mb-2">
                             <span class="required">Mobile number</span>
                             <span class="ms-2" data-bs-toggle="tooltip" title="A valid mobile number is required to receive the one-time password to validate your account login.">
-                                <i class="ki-duotone ki-information fs-7">
+                                <i class="ki-solid ki-information fs-7">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                     <span class="path3"></span>

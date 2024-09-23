@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::table('users', function (Blueprint $table) {
             $table->datetime('last_login_at')->nullable();
             $table->string('last_login_ip')->nullable();
+            $table->string('last_login_location')->nullable();
         });
     }
 
@@ -24,6 +25,7 @@ return new class extends Migration {
         Schema::table('users', function (Blueprint $table) {
             $table->removeColumn('last_login_at');
             $table->removeColumn('last_login_ip');
+            $table->removeColumn('last_login_location');
         });
     }
 };

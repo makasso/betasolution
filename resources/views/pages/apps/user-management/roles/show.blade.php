@@ -38,13 +38,13 @@
                             @if($role->permissions->count() > 5)
                                 <div class="d-flex align-items-center py-2">
                                     <span class='bullet bg-primary me-3'></span>
-                                    <em>and {{ $role->permissions->count()-5 }} more...</em>
+                                    <em>{{ __('admin/app.general.and') }} {{ $role->permissions->count()-5 }} {{ __('admin/app.general.more') }}...</em>
                                 </div>
                             @endif
-                            @if($role->permissions->count() ===0)
+                            @if($role->permissions->count() === 0)
                                 <div class="d-flex align-items-center py-2">
                                     <span class='bullet bg-primary me-3'></span>
-                                    <em>No permissions given...</em>
+                                    <em>{{ __('admin/app.general.no_data_found') }}...</em>
                                 </div>
                             @endif
                         </div>
@@ -53,7 +53,7 @@
                     <!--end::Card body-->
                     <!--begin::Card footer-->
                     <div class="card-footer pt-0">
-                        <button type="button" class="btn btn-light btn-active-primary" data-role-id="{{ $role->name }}" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                        <button type="button" class="btn btn-light btn-active-primary" data-role-id="{{ $role->name }}" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">{{ __('admin/app.menu.role_edit') }}</button>
                     </div>
                     <!--end::Card footer-->
                 </div>
@@ -68,7 +68,7 @@
                     <div class="card-header pt-5">
                         <!--begin::Card title-->
                         <div class="card-title">
-                            <h2 class="d-flex align-items-center">Users Assigned
+                            <h2 class="d-flex align-items-center">{{ __('admin/app.menu.user') }}
                                 <span class="text-gray-600 fs-6 ms-1">({{ $role->users->count() }})</span>
                             </h2>
                         </div>
@@ -98,7 +98,7 @@
     <!--end::Content container-->
 
     <!--begin::Modal-->
-    <livewire:permission.role-modal></livewire:permission.role-modal>
+    <livewire:admin.permission.role-modal></livewire:admin.permission.role-modal>
     <!--end::Modal-->
 
     @push('scripts')

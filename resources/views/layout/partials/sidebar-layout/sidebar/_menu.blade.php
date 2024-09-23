@@ -9,66 +9,120 @@
 				<!--begin:Menu link-->
 				<a class="menu-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
 					<span class="menu-bullet">
-						<span class="ki-duotone ki-home"></span>
+						<span class="ki-solid ki-home"></span>
 					</span>
 					<span class="menu-title">{{ __('admin/app.menu.dashboard') }}</span>
 				</a>
 				<!--end:Menu link-->
-				
 			</div>
 			<!--end:Menu item-->
 			<!--begin:Menu item-->
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('user-management.*') ? 'here show' : '' }}">
-				<!--begin:Menu link-->
-				<span class="menu-link">
+            @role('super admin')
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('user-management.*') ? 'here show' : '' }}">
+                <!--begin:Menu link-->
+                <span class="menu-link">
 					<span class="menu-icon">{!! getIcon('user', 'fs-2') !!}</span>
 					<span class="menu-title">{{ __('admin/app.menu.user_management') }}</span>
 					<span class="menu-arrow"></span>
 				</span>
-				<!--end:Menu link-->
-				<!--begin:Menu sub-->
-				<div class="menu-sub menu-sub-accordion">
-					<!--begin:Menu item-->
-					<div class="menu-item">
-						<!--begin:Menu link-->
-						<a class="menu-link {{ request()->routeIs('user-management.users.*') ? 'active' : '' }}" href="{{ route('user-management.users.index') }}">
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ request()->routeIs('user-management.users.*') ? 'active' : '' }}" href="{{ route('user-management.users.index') }}">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">{{ __('admin/app.menu.user') }}</span>
-						</a>
-						<!--end:Menu link-->
-					</div>
-					<!--end:Menu item-->
-					<!--begin:Menu item-->
-					<div class="menu-item">
-						<!--begin:Menu link-->
-						<a class="menu-link {{ request()->routeIs('user-management.roles.*') ? 'active' : '' }}" href="{{ route('user-management.roles.index') }}">
+                            <span class="menu-title">{{ __('admin/app.menu.user') }}</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ request()->routeIs('user-management.roles.*') ? 'active' : '' }}" href="{{ route('user-management.roles.index') }}">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">{{ __('admin/app.menu.role') }}</span>
-						</a>
-						<!--end:Menu link-->
-					</div>
-					<!--end:Menu item-->
-					<!--begin:Menu item-->
-					<div class="menu-item">
-						<!--begin:Menu link-->
-						<a class="menu-link {{ request()->routeIs('user-management.permissions.*') ? 'active' : '' }}" href="{{ route('user-management.permissions.index') }}">
+                            <span class="menu-title">{{ __('admin/app.menu.role') }}</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ request()->routeIs('user-management.permissions.*') ? 'active' : '' }}" href="{{ route('user-management.permissions.index') }}">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">{{ __('admin/app.menu.permission') }}</span>
-						</a>
-						<!--end:Menu link-->
-					</div>
-					<!--end:Menu item-->
-				</div>
-				<!--end:Menu sub-->
-			</div>
+                            <span class="menu-title">{{ __('admin/app.menu.permission') }}</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            @endrole
 			<!--end:Menu item-->
-			
+            <!--begin:Menu item-->
+            @role('super admin')
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('course-management.*') ? 'here show' : '' }}">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-icon">{!! getIcon('book-open', 'fs-2') !!}</span>
+					<span class="menu-title">{{ __('admin/app.menu.course_management') }}</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ request()->routeIs('course-management.courses.*') ? 'active' : '' }}" href="{{ route('course-management.courses.index') }}">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+                            <span class="menu-title">{{ __('admin/app.menu.course') }}</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ request()->routeIs('course-management.categories.*') ? 'active' : '' }}" href="{{ route('course-management.categories.index') }}">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+                            <span class="menu-title">{{ __('admin/app.menu.category') }}</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item {{ request()->routeIs('companies.*') ? 'here show' : '' }}">
+                <!--begin:Menu link-->
+                <a class="menu-link {{ request()->routeIs('companies.index') ? 'active' : '' }}" href="{{ route('companies.index') }}">
+					<span class="menu-bullet">
+						<span class="ki-solid ki-people"></span>
+					</span>
+                    <span class="menu-title">{{ __('admin/app.menu.company') }}</span>
+                </a>
+                <!--end:Menu link-->
+            </div>
+            <!--end:Menu item-->
+            @endrole
+            <!--end:Menu item-->
 		</div>
 		<!--end::Menu-->
 	</div>

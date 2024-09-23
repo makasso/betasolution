@@ -20,6 +20,8 @@ class CompanyFactory extends Factory
             'name' => fake()->company(),
             'industry' => fake()->word(),
             'address' => fake()->address(),
+            'country' => fake()->country(),
+            'city' => fake()->city(),
             'phone' => fake()->phoneNumber(),
             'email' => fake()->companyEmail(),
             'validity_date' => now()->addYears(3),

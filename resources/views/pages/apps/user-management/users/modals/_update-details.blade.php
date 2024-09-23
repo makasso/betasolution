@@ -13,7 +13,7 @@
                     <!--end::Modal title-->
                     <!--begin::Close-->
                     <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                        <i class="ki-duotone ki-cross fs-1">
+                        <i class="ki-solid ki-cross fs-1">
                             <span class="path1"></span>
                             <span class="path2"></span>
                         </i>
@@ -30,7 +30,7 @@
                         <div class="fw-bolder fs-3 rotate collapsible mb-7" data-bs-toggle="collapse" href="#kt_modal_update_user_user_info" role="button" aria-expanded="false"
                             aria-controls="kt_modal_update_user_user_info">User Information
                             <span class="ms-2 rotate-180">
-                                <i class="ki-duotone ki-down fs-3"></i>
+                                <i class="ki-solid ki-down fs-3"></i>
                             </span>
                         </div>
                         <!--end::User toggle-->
@@ -42,7 +42,7 @@
                                 <label class="fs-6 fw-semibold mb-2">
                                     <span>Update Avatar</span>
                                     <span class="ms-1" data-bs-toggle="tooltip" title="Allowed file types: png, jpg, jpeg.">
-                                        <i class="ki-duotone ki-information fs-7">
+                                        <i class="ki-solid ki-information fs-7">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
@@ -57,7 +57,7 @@
                                         .image-input-placeholder {
                                             background-image: url('{{ image('svg/files/blank-image.svg') }}');
                                         }
-        
+
                                         [data-bs-theme="dark"] .image-input-placeholder {
                                             background-image: url('{{ image('svg/files/blank-image-dark.svg') }}');
                                         }
@@ -70,7 +70,7 @@
                                         <!--end::Preview existing avatar-->
                                         <!--begin::Edit-->
                                         <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                            <i class="ki-duotone ki-pencil fs-7">
+                                            <i class="ki-solid ki-pencil fs-7">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
@@ -82,7 +82,7 @@
                                         <!--end::Edit-->
                                         <!--begin::Cancel-->
                                         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                                            <i class="ki-duotone ki-cross fs-2">
+                                            <i class="ki-solid ki-cross fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
@@ -90,7 +90,7 @@
                                         <!--end::Cancel-->
                                         <!--begin::Remove-->
                                         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                                            <i class="ki-duotone ki-cross fs-2">
+                                            <i class="ki-solid ki-cross fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
@@ -118,7 +118,7 @@
                                 <label class="fs-6 fw-semibold mb-2">
                                     <span>Email</span>
                                     <span class="ms-1" data-bs-toggle="tooltip" title="Email address must be active">
-                                        <i class="ki-duotone ki-information fs-7">
+                                        <i class="ki-solid ki-information fs-7">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
@@ -206,7 +206,7 @@
                         <div class="fw-bolder fs-3 rotate collapsible mb-7" data-bs-toggle="collapse" href="#kt_modal_update_user_address" role="button" aria-expanded="false" aria-controls="kt_modal_update_user_address">
                             Address Details
                             <span class="ms-2 rotate-180">
-                                <i class="ki-duotone ki-down fs-3"></i>
+                                <i class="ki-solid ki-down fs-3"></i>
                             </span>
                         </div>
                         <!--end::Address toggle-->
@@ -272,7 +272,7 @@
                                 <label class="fs-6 fw-semibold mb-2">
                                     <span>Country</span>
                                     <span class="ms-1" data-bs-toggle="tooltip" title="Country of origination">
-                                        <i class="ki-duotone ki-information fs-7">
+                                        <i class="ki-solid ki-information fs-7">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>

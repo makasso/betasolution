@@ -1,14 +1,14 @@
 <x-default-layout>
 
     @section('title')
-        Dashboard
+        {{ __('admin/app.menu.dashboard') }}
     @endsection
 
     @section('breadcrumbs')
         {{ Breadcrumbs::render('dashboard') }}
     @endsection
 
-    <!--begin::Row-->
+   {{-- <!--begin::Row-->
     <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
         <!--begin::Col-->
         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
@@ -90,5 +90,5 @@
         </div>
         <!--end::Col-->
     </div>
-    <!--end::Row-->
+    <!--end::Row-->--}}
 </x-default-layout>

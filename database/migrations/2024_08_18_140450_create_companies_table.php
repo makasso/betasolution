@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('industry')->nullable();
             $table->string('address')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
             $table->string('email')->nullable()->unique('email');
             $table->string('phone', 20)->nullable();
             $table->bigInteger('package_id')->nullable()->index('package_id');

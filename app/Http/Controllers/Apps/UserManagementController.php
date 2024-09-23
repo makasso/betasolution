@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Apps;
 
 use App\DataTables\UsersDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\LogHistory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserManagementController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:super admin']);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -38,7 +43,8 @@ class UserManagementController extends Controller
      */
     public function show(User $user)
     {
-        return view('pages/apps.user-management.users.show', compact('user'));
+        $session_histories = LogHistory::where('user_id', $user->id)->latest()->get();
+        return view('pages/apps.user-management.users.show', compact('user', 'session_histories'));
     }
 
     /**

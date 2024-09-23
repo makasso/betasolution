@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class
         ]);
 
-        \App\Models\User::factory(20)->create();
+
 
         Address::factory(20)->create();
 

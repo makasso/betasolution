@@ -11,7 +11,7 @@
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                    <i class="ki-duotone ki-cross fs-1">
+                    <i class="ki-solid ki-cross fs-1">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </i>
@@ -40,13 +40,13 @@
                             <div class="position-relative mb-3">
                                 <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="new_password" autocomplete="off" />
                                 <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                    <i class="ki-duotone ki-eye-slash fs-1">
+                                    <i class="ki-solid ki-eye-slash fs-1">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                         <span class="path3"></span>
                                         <span class="path4"></span>
                                     </i>
-                                    <i class="ki-duotone ki-eye d-none fs-1">
+                                    <i class="ki-solid ki-eye d-none fs-1">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                         <span class="path3"></span>

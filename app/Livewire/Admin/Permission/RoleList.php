@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Permission;
+namespace App\Livewire\Admin\Permission;
 
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
@@ -16,7 +16,7 @@ class RoleList extends Component
     {
         $this->roles = Role::with('permissions')->get();
 
-        return view('livewire.permission.role-list');
+        return view('livewire.admin.permission.role-list');
     }
 
     public function updateRoleList()

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->bigInteger('id', true);
             $table->bigInteger('user_id')->nullable()->index('user_id');
             $table->string('action');
-            $table->string('ip_address', 45)->nullable();
+            $table->string('ip_address')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->string('location')->nullable();
             $table->timestamp('created_at')->nullable();
         });
     }

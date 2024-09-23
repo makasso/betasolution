@@ -46,7 +46,12 @@ class UsersDataTable extends DataTable
      */
     public function query(User $model): QueryBuilder
     {
-        return $model->newQuery();
+        $query = $model->newQuery();
+        $query->with(['roles'])->whereHas('roles', function ($query) {
+            $query->whereNotIn('name', ['super admin', 'company admin']);
+        })->latest();
+
+        return $query;
     }
 
     /**
@@ -63,6 +68,7 @@ class UsersDataTable extends DataTable
             ->setTableHeadClass('text-start text-muted fw-bold fs-7 text-uppercase gs-0')
             ->orderBy(2)
             ->drawCallback("function() {" . file_get_contents(resource_path('views/pages/apps/user-management/users/columns/_draw-scripts.js')) . "}");
+
     }
 
     /**

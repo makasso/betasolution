@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Apps\CategoryManagementController;
+use App\Http\Controllers\Apps\CompanyManagementController;
+use App\Http\Controllers\Apps\CourseManagementController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -32,20 +35,22 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::resource('/user-management/permissions', PermissionManagementController::class);
     });
 
+    // Course Management Routes
     Route::name('course-management.')->group(function () {
-        Route::resource('/course-management/courses', \App\Http\Controllers\CourseManagementController::class);
-        Route::resource('/course-management/modules', \App\Http\Controllers\ModuleManagementController::class);
-        Route::resource('/course-management/lessons', \App\Http\Controllers\LessonManagementController::class);
-        Route::resource('/course-management/quizzes', \App\Http\Controllers\QuizManagementController::class);
-        Route::resource('/course-management/assignments', \App\Http\Controllers\AssignmentManagementController::class);
-        Route::resource('/course-management/resources', \App\Http\Controllers\ResourceManagementController::class);
+        Route::resource('/course-management/courses', CourseManagementController::class);
+        Route::resource('/course-management/categories', CategoryManagementController::class);
     });
 
-
+    // Company Routes
+    Route::resource('/companies', CompanyManagementController::class);
 });
 
 Route::get('/error', function () {
     abort(500);
+});
+
+Route::get('/', function() {
+   return redirect()->route('dashboard');
 });
 
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);

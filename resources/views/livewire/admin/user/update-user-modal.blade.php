@@ -1,4 +1,4 @@
-<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true" wire:ignore.self>
+<div class="modal fade" id="kt_modal_update_details" tabindex="-1" aria-hidden="true" wire:ignore.self>
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
@@ -6,7 +6,7 @@
             <!--begin::Modal header-->
             <div class="modal-header" id="kt_modal_add_user_header">
                 <!--begin::Modal title-->
-                <h2 class="fw-bold">{{ __('admin/app.menu.user_create') }}</h2>
+                <h2 class="fw-bold">{{ __('admin/app.menu.user_edit') }}</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" aria-label="Close">
@@ -19,13 +19,13 @@
             <div class="modal-body px-5 my-7">
                 <!--begin::Form-->
                 <form id="kt_modal_add_user_form" class="form" action="#" wire:submit.prevent="submit"
-                    enctype="multipart/form-data">
+                      enctype="multipart/form-data">
                     <input type="hidden" wire:model="user_id" name="user_id" value="{{ $user_id }}" />
                     <!--begin::Scroll-->
                     <div class="d-flex flex-column scroll-y px-5 px-lg-10" id="kt_modal_add_user_scroll"
-                        data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto"
-                        data-kt-scroll-dependencies="#kt_modal_add_user_header"
-                        data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+                         data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto"
+                         data-kt-scroll-dependencies="#kt_modal_add_user_header"
+                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                         <!--begin::Input group-->
                         {{-- <div class="fv-row mb-7">
                             <!--begin::Label-->
@@ -98,10 +98,10 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <input type="text" wire:model="name" name="name"
-                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" />
+                                   class="form-control form-control-solid mb-3 mb-lg-0" placeholder="{{ __('admin/app.general.categories_table.name') }}" />
                             <!--end::Input-->
                             @error('name')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <!--end::Input group-->
@@ -112,20 +112,20 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <input type="email" wire:model="email" name="email"
-                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" />
+                                   class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" />
                             <!--end::Input-->
                             @error('email')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-5">Role</label>
+                            <label class="required fw-semibold fs-6 mb-5">{{ __('admin/app.general.users_table.role') }}</label>
                             <!--end::Label-->
                             @error('role')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                             <!--begin::Roles-->
                             @foreach ($roles as $role)
@@ -135,13 +135,13 @@
                                     <div class="form-check form-check-custom form-check-solid">
                                         <!--begin::Input-->
                                         <input class="form-check-input me-3"
-                                            id="kt_modal_update_role_option_{{ $role->id }}" wire:model="role"
-                                            name="role" type="radio" value="{{ $role->name }}"
-                                            checked="checked" />
+                                               id="kt_modal_update_role_option_{{ $role->id }}" wire:model="role"
+                                               name="role" type="radio" value="{{ $role->name }}"
+                                               checked="checked" />
                                         <!--end::Input-->
                                         <!--begin::Label-->
                                         <label class="form-check-label"
-                                            for="kt_modal_update_role_option_{{ $role->id }}">
+                                               for="kt_modal_update_role_option_{{ $role->id }}">
                                             <div class="fw-bold text-gray-800">
                                                 {{ ucwords($role->name) }}
                                             </div>
@@ -166,7 +166,7 @@
                     <!--begin::Actions-->
                     <div class="text-center pt-15">
                         <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" aria-label="Close"
-                            wire:loading.attr="disabled">{{ __('admin/app.general.cancel') }}</button>
+                                wire:loading.attr="disabled">{{ __('admin/app.general.cancel') }}</button>
                         <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
                             <span class="indicator-label" wire:loading.remove>{{ __('admin/app.general.create') }}</span>
                             <span class="indicator-progress" wire:loading wire:target="submit">

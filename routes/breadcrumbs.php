@@ -51,3 +51,27 @@ Breadcrumbs::for('user-management.permissions.index', function (BreadcrumbTrail 
     $trail->parent('user-management.index');
     $trail->push(trans('admin/app.menu.permission'), route('user-management.permissions.index'));
 });
+//
+Breadcrumbs::for('course-management.courses.index', function (BreadcrumbTrail $trail) {
+    $trail->push(trans('admin/app.menu.course_management'), route('course-management.courses.index'));
+});
+
+
+Breadcrumbs::for('company-management.companies.index', function (BreadcrumbTrail $trail) {
+    $trail->push(trans('admin/app.menu.company_management'), route('companies.index'));
+});
+
+Breadcrumbs::for('company-management.companies.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('company-management.companies.index');
+    $trail->push(trans('admin/app.menu.company_create'), route('companies.create'));
+});
+
+Breadcrumbs::for('company-management.companies.edit', function (BreadcrumbTrail $trail, \App\Models\Company $company) {
+    $trail->parent('company-management.companies.index');
+    $trail->push(ucwords($company->name), route('companies.edit', $company));
+});
+
+Breadcrumbs::for('company-management.companies.show', function (BreadcrumbTrail $trail, \App\Models\Company $company) {
+    $trail->parent('company-management.companies.index');
+    $trail->push(trans('admin/app.menu.company'), route('companies.show', $company));
+});

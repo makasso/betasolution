@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Livewire\User;
+namespace App\Livewire\Admin\User;
 
 use App\Models\User;
-use Livewire\Component;
-use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+use Spatie\Permission\Models\Role;
 
-class AddUserModal extends Component
+class UpdateUserModal extends Component
 {
     use WithFileUploads;
 
@@ -21,8 +21,7 @@ class AddUserModal extends Component
     public $role;
     public $avatar;
     public $saved_avatar;
-
-    public $edit_mode = false;
+    public $edit_mode;
 
     protected $rules = [
         'name' => 'required|string',
@@ -37,9 +36,13 @@ class AddUserModal extends Component
         'new_user' => 'hydrate',
     ];
 
+    public function mount()
+    {
+        $this->edit_mode = false;
+    }
     public function render()
     {
-        $roles = Role::all();
+        $roles = Role::select('*')->whereNotIn('name', ['super admin', 'company admin', 'employee'])->get();
 
         $roles_description = [
             'administrator' => 'Best for business owners and company administrators',
@@ -53,7 +56,7 @@ class AddUserModal extends Component
             $roles[$i]->description = $roles_description[$role->name] ?? '';
         }
 
-        return view('livewire.user.add-user-modal', compact('roles'));
+        return view('livewire.admin.user.add-user-modal', compact('roles'));
     }
 
     public function submit()
@@ -93,7 +96,7 @@ class AddUserModal extends Component
                 $user->syncRoles($this->role);
 
                 // Emit a success event with a message
-                $this->dispatch('success', __('User updated'));
+                $this->dispatch('success', trans('admin/app.general.updated_successfully'));
             } else {
                 // Assign selected role for user
                 $user->assignRole($this->role);
@@ -102,7 +105,7 @@ class AddUserModal extends Component
                 Password::sendResetLink($user->only('email'));
 
                 // Emit a success event with a message
-                $this->dispatch('success', __('New user created'));
+                $this->dispatch('success', trans('admin/app.general.created_successfully'));
             }
         });
 
@@ -114,7 +117,7 @@ class AddUserModal extends Component
     {
         // Prevent deletion of current user
         if ($id == Auth::id()) {
-            $this->dispatch('error', 'User cannot be deleted');
+            $this->dispatch('error', trans('admin/app.general.delete_not'));
             return;
         }
 
@@ -122,7 +125,7 @@ class AddUserModal extends Component
         User::destroy($id);
 
         // Emit a success event with a message
-        $this->dispatch('success', 'User successfully deleted');
+        $this->dispatch('success', trans('admin/app.general.deleted_successfully'));
     }
 
     public function updateUser($id)

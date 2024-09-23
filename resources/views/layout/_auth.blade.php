@@ -27,7 +27,7 @@
                                         <img data-kt-element="current-lang-flag" class="w-20px h-20px rounded me-3"
                                             src="{{ asset('assets/media/flags/france.svg') }}" alt="">
                                         <span data-kt-element="current-lang-name" class="me-1">Français</span>
-                                        <i class="ki-duotone ki-down fs-5 text-muted rotate-180 m-0"></i>
+                                        <i class="ki-solid ki-down fs-5 text-muted rotate-180 m-0"></i>
                                     </button>
                                 @else
                                     <button
@@ -38,7 +38,7 @@
                                             src="{{ asset('assets/media/flags/united-states.svg') }}"
                                             alt="">
                                         <span data-kt-element="current-lang-name" class="me-1">English</span>
-                                        <i class="ki-duotone ki-down fs-5 text-muted rotate-180 m-0"></i>
+                                        <i class="ki-solid ki-down fs-5 text-muted rotate-180 m-0"></i>
                                     </button>
                                 @endif
         

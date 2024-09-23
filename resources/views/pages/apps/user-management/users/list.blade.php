@@ -16,7 +16,7 @@
                 <!--begin::Search-->
                 <div class="d-flex align-items-center position-relative my-1">
                     {!! getIcon('magnifier', 'fs-3 position-absolute ms-5') !!}
-                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13" placeholder="Search user" id="mySearchInput"/>
+                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13" placeholder="{{ __('admin/app.general.search') . ' ' .  __('admin/app.menu.user') }} " id="mySearchInput"/>
                 </div>
                 <!--end::Search-->
             </div>
@@ -36,7 +36,7 @@
                 <!--end::Toolbar-->
 
                 <!--begin::Modal-->
-                <livewire:user.add-user-modal></livewire:user.add-user-modal>
+                <livewire:admin.user.add-user-modal></livewire:admin.user.add-user-modal>
                 <!--end::Modal-->
             </div>
             <!--end::Card toolbar-->
@@ -53,6 +53,7 @@
         </div>
         <!--end::Card body-->
     </div>
+        <livewire:admin.user.update-user-modal></livewire:admin.user.update-user-modal>
 
     @push('scripts')
         {{ $dataTable->scripts() }}
@@ -70,6 +71,47 @@
                 Livewire.dispatch('new_user');
             });
         </script>
+
+            <script>
+                // Initialize KTMenu
+                KTMenu.init();
+
+                // Add click event listener to delete buttons
+                document.querySelectorAll('[data-kt-action="delete_row"]').forEach(function (element) {
+                    element.addEventListener('click', function () {
+                        Swal.fire({
+                            text: '{{ __('admin/app.general.delete_confirmation') }}',
+                            icon: 'warning',
+                            buttonsStyling: false,
+                            showCancelButton: true,
+                            confirmButtonText: '{{ __('admin/app.general.confirm') }}',
+                            cancelButtonText: '{{ __('admin/app.general.cancel') }}',
+                            customClass: {
+                                confirmButton: 'btn btn-danger',
+                                cancelButton: 'btn btn-secondary',
+                            }
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Livewire.dispatch('delete_user', [this.getAttribute('data-kt-user-id')]);
+                            }
+                        });
+                    });
+                });
+
+                // Add click event listener to update buttons
+                document.querySelectorAll('[data-kt-action="update_row"]').forEach(function (element) {
+                    element.addEventListener('click', function () {
+                        Livewire.dispatch('update_user', [this.getAttribute('data-kt-user-id')]);
+                    });
+                });
+
+                // Listen for 'success' event emitted by Livewire
+                Livewire.on('success', (message) => {
+                    // Reload the users-table datatable
+                    LaravelDataTables['users-table'].ajax.reload();
+                });
+
+            </script>
     @endpush
 
 </x-default-layout>

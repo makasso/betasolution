@@ -29,5 +29,7 @@ class UsersSeeder extends Seeder
             'password'          => Hash::make('demo'),
             'email_verified_at' => now(),
         ]);
+
+        \App\Models\User::factory(20)->create();
     }
 }
